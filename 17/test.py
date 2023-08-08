@@ -1,1 +1,1 @@
-print(len(str(-345)))
+print(-1%10)
