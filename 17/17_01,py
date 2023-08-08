@@ -1,0 +1,30 @@
+f = open('17-345.txt','r')
+a = [int(x) for x in f]
+
+tmax = 0
+for x in a:
+    if x % 100 == 52:
+        if x > tmax:
+            tmax = x
+
+tmin = 10000000
+for x in a:
+    if x % 100 == 52:
+        if x < tmin:
+            tmin = x
+
+tdiv = tmax - tmin
+
+count = 0
+pmax = 0
+for i in range(len(a)-1):
+    if a[i] < tdiv and a[i+1] >= tdiv or a[i] >= tdiv and a[i+1] < tdiv:
+        if a[i] + a[i+1] > pmax:
+            pmax = a[i] + a[i+1]
+        count += 1
+
+print(count)
+print(pmax)
+
+
+
